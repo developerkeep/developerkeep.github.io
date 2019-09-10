@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang=vi>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Plugin Visual Assist X thần thánhNhư các bạn đã biết Visual Assist X là một Plugin rất mạnh mẽ dùng cho Microsoft Visual Studio. Visual Assist X giúp cho việc hiển thị rõ ràng các từ khóa của ngôn ngữ">
+<meta name="keywords" content="-tools -visual studio -visual assist">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio">
+<meta property="og:url" content="http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/index.html">
+<meta property="og:site_name" content="DeveloperKeep">
+<meta property="og:description" content="Plugin Visual Assist X thần thánhNhư các bạn đã biết Visual Assist X là một Plugin rất mạnh mẽ dùng cho Microsoft Visual Studio. Visual Assist X giúp cho việc hiển thị rõ ràng các từ khóa của ngôn ngữ">
+<meta property="og:locale" content="vi">
+<meta property="og:image" content="http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/snippet.gif">
+<meta property="og:image" content="http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/menu-to-VA-options.png">
+<meta property="og:image" content="http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/VA-Option.png">
+<meta property="og:image" content="http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/VA-Snippet-Editor.png">
+<meta property="og:image" content="http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/result.png">
+<meta property="og:updated_time" content="2017-10-07T18:07:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio">
+<meta name="twitter:description" content="Plugin Visual Assist X thần thánhNhư các bạn đã biết Visual Assist X là một Plugin rất mạnh mẽ dùng cho Microsoft Visual Studio. Visual Assist X giúp cho việc hiển thị rõ ràng các từ khóa của ngôn ngữ">
+<meta name="twitter:image" content="http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/snippet.gif">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Blogs</a></li>
+         
+          <li><a href="/Search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2017/10/09/copy-object-trong-javascript/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2016/01/01/privacy/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Bài viết trước</span>
+      <span id="i-next" class="info" style="display:none;">Bài viết tiếp theo</span>
+      <span id="i-top" class="info" style="display:none;">Về đầu trang</span>
+      <span id="i-share" class="info" style="display:none;">Chia sẻ bài viết</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/&text=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/&title=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/&is_video=false&description=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio&body=Check out this article: http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/&title=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/&title=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/&title=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/&title=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/&name=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Plugin-Visual-Assist-X-than-thanh"><span class="toc-number">1.</span> <span class="toc-text">Plugin Visual Assist X thần thánh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chuc-nang-Snippet-cua-Vissual-Assist-X"><span class="toc-number">2.</span> <span class="toc-text">Chức năng Snippet của Vissual Assist X</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cach-them-hoac-sua-mot-snippet-trong-Visual-Assist-X"><span class="toc-number">3.</span> <span class="toc-text">Cách thêm hoặc sửa một snippet trong Visual Assist X</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">DeveloperKeep</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-10-07T12:22:56.000Z" itemprop="datePublished">2017-10-07</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/tools-visual-studio-visual-assist/">-tools -visual studio -visual assist</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="Plugin-Visual-Assist-X-than-thanh"><a href="#Plugin-Visual-Assist-X-than-thanh" class="headerlink" title="Plugin Visual Assist X thần thánh"></a>Plugin Visual Assist X thần thánh</h2><p>Như các bạn đã biết Visual Assist X là một Plugin rất mạnh mẽ dùng cho Microsoft Visual Studio.</p>
+<p>Visual Assist X giúp cho việc hiển thị rõ ràng các từ khóa của ngôn ngữ lập trình(thông qua màu sắc của các biến, kiểu dữ liệu, hàm, từ khoá..).</p>
+<p>Visual Assist X cung cấp khả năng đề xuất code, refactoring code, tự động điền tên biến, tên hàm chỉ sau khi gõ 1 vài ký tự, hiển thị các prototype của một hàm. Tìm kiếm các reference của hàm, biết một cách chi tiết giúp lập trình viên có thể thao tác, review code thuận tiện.</p>
+<p>Đó là các chức năng nổi tiếng chắc ai cũng biết. Hôm nay mình sẽ giới thiệu cho các bạn một chức năng nhỏ của Visual Assist  có thể ít người để ý đến. Nhưng khi biết chức năng này, bạn sẽ tạo ra các comment nhanh hơn, đẹp hơn và giảm các thao tác lặp đi lặp lại đó chính là chức năng <strong>VA Snippets</strong>.</p>
+<h2 id="Chuc-nang-Snippet-cua-Vissual-Assist-X"><a href="#Chuc-nang-Snippet-cua-Vissual-Assist-X" class="headerlink" title="Chức năng Snippet của Vissual Assist X"></a>Chức năng Snippet của Vissual Assist X</h2><p>Chức năng này cơ chế ngắn gọn như sau: bạn tạo ra một snippett có shortcut gán với một đoạn code nào đó muốn sinh ra. Sử dụng bằng cách chỉ cần việc gõ shortcut, ngay lập tức VA hiển thị gợi ý ra code đó. Bạn chỉ cần Enter là có ngay code đó.<br><img src="snippet.gif" alt="The Ghost Logo"></p>
+<h2 id="Cach-them-hoac-sua-mot-snippet-trong-Visual-Assist-X"><a href="#Cach-them-hoac-sua-mot-snippet-trong-Visual-Assist-X" class="headerlink" title="Cách thêm hoặc sửa một snippet trong Visual Assist X"></a>Cách thêm hoặc sửa một snippet trong Visual Assist X</h2><p>Để thêm hoặc sửa các snippet đã có sẵn bạn vào menu VASSISX -&gt; Visual Assist Options…<br><img src="menu-to-VA-options.png" alt="menu to VA options"></p>
+<p>Trong hộp thoại Visual Assist Options chọ mục Suggestions và chọn Edit VA Snippets.</p>
+<p><img src="VA-Option.png" alt="VA Option"></p>
+<p> Hộp thoại VA Snippet Editor xuất hiện:<br><img src="VA-Snippet-Editor.png" alt="VA Snippet Editor"></p>
+<p>Clink vào (1) để thêm mới hoặc chọn 1 trong các mục ở danh sách các snippet ở dưới để sửa.</p>
+<p>Ở mục (2) là điền shortcut, như hình ví dụ mình chọn là /** . Ở mục (3) là điền code cần tạo ra. Ở đây mình chọn sinh ra một mẫu comment đầu hàm mà mình hay dùng.</p>
+<p>Một điều hay ho ở snippet khiến mình thấy thích thú đó là các biến mà VA cung cấp ở mục (4). VA cung cấp rất nhiều biến như ngày tháng, tên file, tab…</p>
+<p>Ở đây ví dụ mình chọn biến $DATE$ để hiển thị ngày tháng hiện tại, biến $end$ để sau khi sinh ra code thì con trỏ chuột đặt vào vị trí đó để mình thêm thông tin.</p>
+<p>Kết quả sau khi chỉ gõ shortcut và ấn enter:</p>
+<p><img src="result.png" alt></p>
+<p>Đối với mình sử dụng chức năng này sẽ giúp mình bớt nhàm chán khi phải gõ đi gõ lại trong những đoạn code không cần thiết trong khi mình muốn tập trung vào code chính. Những kỹ năng nho nhỏ như thế này hi vọng sẽ giúp bạn code cool hơn.<br>Nếu thấy hay ho và có ích hãy like và share giúp mình hoặc comment nhữ kỹ năng mà bạn biết thêm ở dưới nhé!</p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Blogs</a></li>
+         
+          <li><a href="/Search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Plugin-Visual-Assist-X-than-thanh"><span class="toc-number">1.</span> <span class="toc-text">Plugin Visual Assist X thần thánh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chuc-nang-Snippet-cua-Vissual-Assist-X"><span class="toc-number">2.</span> <span class="toc-text">Chức năng Snippet của Vissual Assist X</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cach-them-hoac-sua-mot-snippet-trong-Visual-Assist-X"><span class="toc-number">3.</span> <span class="toc-text">Cách thêm hoặc sửa một snippet trong Visual Assist X</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/&text=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/&title=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/&is_video=false&description=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio&body=Check out this article: http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/&title=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/&title=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/&title=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/&title=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://developerkeep.com/2017/10/07/code-nhanh-hon-voi-va-snippets-cua-visual-assist-x-trong-visual-studio/&name=Code nhanh hơn với VA Snippets của Visual Assist X trong Visual Studio&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Chia sẻ</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Lên đầu trang</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 DeveloperKeep
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Blogs</a></li>
+         
+          <li><a href="/Search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-88004252-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+

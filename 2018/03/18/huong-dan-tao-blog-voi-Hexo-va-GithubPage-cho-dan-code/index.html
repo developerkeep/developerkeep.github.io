@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang=vi>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Hướng dẫn tạo blog Hexo và deploy lên Github page cho dân code">
+<meta name="keywords" content="blog,hexo,github pages">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hướng dẫn tạo blog với Hexo và GithubPage cho dân code">
+<meta property="og:url" content="http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/index.html">
+<meta property="og:site_name" content="DeveloperKeep">
+<meta property="og:description" content="Hướng dẫn tạo blog Hexo và deploy lên Github page cho dân code">
+<meta property="og:locale" content="vi">
+<meta property="og:image" content="http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/github_hexo_blog.png">
+<meta property="og:image" content="http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/theme-directory.png">
+<meta property="og:image" content="http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/post-directory.png">
+<meta property="og:image" content="http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/hexo-public-folder.png">
+<meta property="og:updated_time" content="2019-09-10T12:33:43.293Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hướng dẫn tạo blog với Hexo và GithubPage cho dân code">
+<meta name="twitter:description" content="Hướng dẫn tạo blog Hexo và deploy lên Github page cho dân code">
+<meta name="twitter:image" content="http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/github_hexo_blog.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Hướng dẫn tạo blog với Hexo và GithubPage cho dân code</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Blogs</a></li>
+         
+          <li><a href="/Search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/10/05/Tan-man-ngay-mua-nhung-dieu-nhan-ra-ngan-day/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2017/10/09/nhat-ky-di-lam-chi-bang-mot-buc-anh/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Bài viết trước</span>
+      <span id="i-next" class="info" style="display:none;">Bài viết tiếp theo</span>
+      <span id="i-top" class="info" style="display:none;">Về đầu trang</span>
+      <span id="i-share" class="info" style="display:none;">Chia sẻ bài viết</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/&text=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/&title=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/&is_video=false&description=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code&body=Check out this article: http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/&title=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/&title=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/&title=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/&title=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/&name=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tai-sao-dan-code-nen-viet-blog"><span class="toc-number">1.</span> <span class="toc-text">Tại sao dân code nên viết blog?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-ly-do-dan-code-chon-Hexo-va-Github-Pages"><span class="toc-number">2.</span> <span class="toc-text">3 lý do dân code chọn Hexo và Github Pages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Huong-dan-tao-blog-bang-Hexo-va-Github-Pages"><span class="toc-number">3.</span> <span class="toc-text">Hướng dẫn tạo blog bằng Hexo và Github Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cai-dat-moi-truong"><span class="toc-number">3.1.</span> <span class="toc-text">Cài đặt môi trường</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tao-blog-run-local"><span class="toc-number">3.2.</span> <span class="toc-text">Tạo blog run local</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dang-ky-Github-Pages"><span class="toc-number">3.3.</span> <span class="toc-text">Đăng ký Github Pages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sinh-web-tinh-va-deploy-len-github-pages"><span class="toc-number">3.4.</span> <span class="toc-text">Sinh web tĩnh và deploy lên github pages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo-theme"><span class="toc-number">3.5.</span> <span class="toc-text">Hexo theme</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Viet-bai-va-public"><span class="toc-number">3.6.</span> <span class="toc-text">Viết bài và public</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Hướng dẫn tạo blog với Hexo và GithubPage cho dân code
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">DeveloperKeep</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-03-17T21:10:00.000Z" itemprop="datePublished">2018-03-18</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/blog/">blog</a>, <a class="tag-link" href="/tags/github-pages/">github pages</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p><img src="github_hexo_blog.png" alt="preview"></p>
+<h2 id="Tai-sao-dan-code-nen-viet-blog"><a href="#Tai-sao-dan-code-nen-viet-blog" class="headerlink" title="Tại sao dân code nên viết blog?"></a>Tại sao dân code nên viết blog?</h2><ul>
+<li><p>Ghi nhớ! Blog giống như sổ tay để ta ghi lại mọi thứ hay ho như kiến thức mình học được, câu chuyện cười hoặc là có thể dùng để viết nhật ký.</p>
+<p>  Blog còn hơn cả sổ tay ở chỗ là có thể đọc qua mạng, dễ dàng share cho bạn bè, người lạ mặt ở trên thế giới có thể tìm đến blog nhờ công cụ tìm kiếm như Google.</p>
+</li>
+<li><p>Luyện tập diễn giải sự việc theo cách trình bày của chính mình. Mọi vấn đề đều có cách để diễn dãi nó một cách dễ hiểu, nếu bạn không làm được điều đó thì chứng tỏ bạn chưa hiểu vấn đề.</p>
+<p>  Nhiều lúc khi xem lời giải của một bài toán ta cứ gật gù rằng “đúng rồi, hóa ra đơn giản vậy” thế nhưng khi để tự mình diễn giải lại lời giải đó thì ta không làm được. Đó là do khi bạn đọc lời giải bạn đang đọc “cách hiểu của tác giả” chứ chưa phải là bạn hiểu! Vậy nên cho đến khi bạn đặt bút xuống diễn giải lại được thì lúc đó bạn mới thực sự hiểu lời giải của vấn đề!</p>
+</li>
+<li>Thể hiện tiếng nói của mình. Nói cách khách là kênh phát ngôn. Ngày nay mạng xã hội phát triển như Facebook có là nơi lý tưởng để viết bài và đó cũng là kênh phát ngôn của bạn. Đối với dân code như mình thì khi follow một người nổi tiếng nào đó trong lĩnh vực IT thì mình thường tìm đến blog của họ thay vì tìm đến trang cá nhân của họ trên mạng xã hội, đơn giản là blog thể hiện tiếng nói và tính cách của họ nhiều hơn là những thứ họ viết trên mạng xã hội.</li>
+<li><p>“Đức” cho người khác. Nếu ai nằm vùng VOZ nhiều thì không lạ gì từ “đức” này mà mỗi khi có một post hay hoặc một post bóc phốt có ảnh là các VOZer vào đọc đầu tiên trong post ấy thường vào “quote” lại bài viết ngay để lỡ bài viết có bị sửa đi thì những người vào sau có thể xem được bài gốc. Đấy gọi là đức, xuất phát từ “làm phúc làm đức” :) </p>
+<p>  Đối với viết blog cũng là “đức” vì những thứ mình viết lại biết đâu lại giúp ích cho người khác! </p>
+</li>
+</ul>
+<h2 id="3-ly-do-dan-code-chon-Hexo-va-Github-Pages"><a href="#3-ly-do-dan-code-chon-Hexo-va-Github-Pages" class="headerlink" title="3 lý do dân code chọn Hexo và Github Pages"></a>3 lý do dân code chọn Hexo và Github Pages</h2><ul>
+<li>Đơn giản và quen thuộc đối với dân code. Đối với dân code thì code và commit code thực sự quá quen thuộc. Làm blog với <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> và <a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a> đơn giản là vì thao tác chính chỉ liên quan đến viết, commit, run lệnh =) mà không phải sử dụng giao diện đồ sộ như Wordpress.</li>
+<li>Nhanh! Bạn có thể deploy blog chỉ khoảng 10 phút cài đặt.</li>
+<li><p>Miễn phí nhưng chất lượng. Cả <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> và <a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a> đều miễn phí, không tốn một xu. Ngoài ra blog trên Github Page không bị chèn quảng cáo, server trâu của github không sợ bị DDos.</p>
+<p>  Ngoài ra một lý do mình chọn <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> cho blog của mình vì framework này chạy trên NodeJs - nền tảng mà mình đã biết. Đối với những ai biết python thì có <a href="https://getpelican.com" target="_blank" rel="noopener">Pelican</a> hoặc Rubby thì có <a href="https://jekyllrb.com" target="_blank" rel="noopener">jekyll</a>, Golang thì có <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>… cũng tương tự như Hexo - đều là Static Web Generator.  </p>
+</li>
+</ul>
+<h2 id="Huong-dan-tao-blog-bang-Hexo-va-Github-Pages"><a href="#Huong-dan-tao-blog-bang-Hexo-va-Github-Pages" class="headerlink" title="Hướng dẫn tạo blog bằng Hexo và Github Pages"></a>Hướng dẫn tạo blog bằng Hexo và Github Pages</h2><p>Bản chất đơn giản như sau:</p>
+<ul>
+<li>Github pages là dịch vụ host static web tức là các file html tĩnh và cho luôn bạn tên miền rất đẹp kiểu như <a href="https://developerkeep.github.io" target="_blank" rel="noopener">developerkeep.github.io</a>. Sau khi đăng ký tài khoản github page thì bạn hoàn toàn tống bất cứ thứ gì đó như html, css, js lên repo của nó thì ta sẽ được 1 trang web tĩnh.”</li>
+<li>Hexo là static web generator tức là thằng xuất blog chạy trên nodejs ra blog dạng tĩnh. Thứ mà <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> xuất ra này lại có thể đem commit lên <a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a> để host trên đấy và thế là có blog =))’</li>
+</ul>
+<h3 id="Cai-dat-moi-truong"><a href="#Cai-dat-moi-truong" class="headerlink" title="Cài đặt môi trường"></a>Cài đặt môi trường</h3><p>Để chạy được hexo trước tiên bạn cần cài đặt <a href="https://nodejs.org" target="_blank" rel="noopener">NodeJs</a>, bản nào cũng được nhé. Recommend bản mới nhất nhé =)</p>
+<p>Sau khi cài đặt xong ta cài đặt hexo-cli:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>Nếu bạn chưa có git thì cài đặt git nhé. Ở bài này mình viết cho dân code mặc định là đã biết sử dụng git. Còn nếu bạn chưa biết git thì tốt hơn bạn nên học sử dụng git với một số thao tác cơ bản trước rồi hãy làm blog theo bài này.</p>
+<h3 id="Tao-blog-run-local"><a href="#Tao-blog-run-local" class="headerlink" title="Tạo blog run local"></a>Tạo blog run local</h3><p>Tạo một thư mục chứa blog của bạn, tại thư mục này chạy lệnh sau để khởi tạo một blog hexo:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure> 
+<p>Chạy blog ở local:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>Mở trình duyệt và truy cập địa chỉ <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> để xem kết quả!</p>
+<h3 id="Dang-ky-Github-Pages"><a href="#Dang-ky-Github-Pages" class="headerlink" title="Đăng ký Github Pages"></a>Đăng ký Github Pages</h3><p>Đăng ký Github Pages cực kỳ đơn giản, bạn đăng ký một tài khoản github vd: developerkeep. Thì blog của bạn sẽ có địa chỉ truy cập là <a href="http://developerkeep.github.io" target="_blank" rel="noopener">http://developerkeep.github.io</a>. Chi tiết xem hướng dẫn trên trang chủ <a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a>.</p>
+<h3 id="Sinh-web-tinh-va-deploy-len-github-pages"><a href="#Sinh-web-tinh-va-deploy-len-github-pages" class="headerlink" title="Sinh web tĩnh và deploy lên github pages"></a>Sinh web tĩnh và deploy lên github pages</h3><p>Giả sử bạn đã đăng ký được github page. Bây giờ ta sẽ tạo web tĩnh từ <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> và deploy lên <a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a>.<br><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> cung cấp một file cấu hình _config.yml ở thư mục gốc của blog. Tại thư mục này ta cấu hình để deploy như sau:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">    type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">    repo:</span> <span class="attr">https://github.com/developerkeep/developerkeep.github.io.git</span></span><br></pre></td></tr></table></figure>
+<p>Ta chỉ ra rằng sẽ deploy bằng git và nơi sẽ deploy là repo <a href="https://github.com/developerkeep/developerkeep.github.io.git" target="_blank" rel="noopener">https://github.com/developerkeep/developerkeep.github.io.git</a><br>Cài đặt thư viện <code>hexo-deployer-git</code> để có thể deploy:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git -save</span><br></pre></td></tr></table></figure>
+<p>Cuối cùng thực hiện deploy bằng lệnh sau:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>Lúc này Hexo sẽ sinh web tĩnh ra và push lên repo của chúng ta đa đăng ký. Xong, bây giờ blog của chúng ta đã có trên github page và có thể truy cập được rồi.<br>Rất đơn giản phải không!</p>
+<h3 id="Hexo-theme"><a href="#Hexo-theme" class="headerlink" title="Hexo theme"></a>Hexo theme</h3><p>Bất cứ Blog framework nào cũng sẽ hỗ trợ theme cho bạn lựa chọn. <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> cũng vậy, có một tá theme ở <a href="https://hexo.io/themes/index.html" target="_blank" rel="noopener">đây</a>. Hầu như các theme ở đấy đều miễn phí và mã nguồn mỡ trên github.</p>
+<p>Cài đặt theme ra sao? Thư mục theme ở /thư mục gốc/themes. trong thư mục này mỗi thư mục con là một theme. Vậy nên để cài đặt theme mới thì việc đầu tiên là bạn phải clone code theme đó vào thư mục themes của Hexo. Ví dụ mình sử dụng theme cactus thì thư mục sẽ như sau:</p>
+<p><img src="theme-directory.png" alt="hexo theme folder"></p>
+<p>Cấu hình để Hexo nhận theme vừa tải về như sau: giả sử bạn vừa tải về theme <code>cactus</code>. Bây giờ mở file <code>_config.yml</code> trong thư mục blog ra. Sử dòng cấu hình theme thành như sau:<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="comment">#theme: landscape</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">cactus</span></span><br></pre></td></tr></table></figure></p>
+<p>Ok. Chạy lại <code>hexo server</code> để xem kết quả! </p>
+<p>Lưu ý, một điều rất hay ở đây là hexo tách mỗi theme ra thành một project riêng, có <code>package.json</code> riêng, có <code>_config.yaml</code> riêng vì thế rất rõ ràng và tiện lợi, nếu bạn cài đặt theme khác thì chú ý tài liệu của theme để cấu hình theme cho đúng nhé. </p>
+<h3 id="Viet-bai-va-public"><a href="#Viet-bai-va-public" class="headerlink" title="Viết bài và public"></a>Viết bài và public</h3><p>Phần liên quan nhất tới viết blog, viết ở đâu, ra sao? Hexo hỗ trợ viết bài với định dạng <code>markdown</code>. Khi tạo bài viết mới bằng lệnh:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new &quot;hello world&quot;</span><br></pre></td></tr></table></figure>
+<p>Hexo sẽ sinh ra 1 file mang tên hello-world.md ở thư mục /source/_post và thư mục chứa assest của post đó là /source/_post/hello-world/. Khi bạn viết nhiều bài, thư mục bài viết của bạn sẽ kiểu như sau:</p>
+<p><img src="post-directory.png" alt="thư mục bài viết Hexo"></p>
+<p>Để có thể viết bài thì bạn chỉ cần mở file .md đó bằng bất cứ trình soạn thảo <code>markdown</code> nào cũng được hoặc là notepad++ =))<br> Bạn nên xem qua hướng dẫn trên trang chủ của hexo về format viết bài.</p>
+<p>Public bài như thế nào? wow đây là việc cuối cùng cần làm để đưa bài viết lên <a href="https://pages.github.com/" target="_blank" rel="noopener">Github pages</a> và có thể <code>share</code> cho bạn bè đọc rồi. Đơn giản, bạn chỉ cần chạy lại lệnh deploy <code>hexo deploy</code> thì hexo sẽ tự động làm việc đó cho bạn.</p>
+<p>Bản chất thì hexo sẽ sinh ra file .html tĩnh tương ứng với bài viết .md của bạn. </p>
+<p><img src="hexo-public-folder.png" alt="Thư mục public của Hexo"></p>
+<p>Sau khi sinh ra file html tĩnh thì hexo mang đống này commit lên <a href="https://pages.github.com/" target="_blank" rel="noopener">Github pages</a>. Như vậy là xong quá trình deploy.</p>
+<p>Có một điều mình thích ở hexo là giúp đơn giản hóa quá trình viết bài, ngày xưa mình viết trên <code>wordpress</code> phải tải ảnh từng cái từng cái, xong rồi chỉnh link cho đúng, mà sửa online chứ không sửa local nên bất tiện là load rất chậm. Còn với <a href="https://pages.github.com/" target="_blank" rel="noopener">Github pages</a> thì mình chỉ cần cho vào thư mục asset mà <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> đã sinh ra, khi <code>deploy</code> thì chỉ cần 1 câu lệnh là toàn bộ ảnh được <code>upload</code> lên luôn.<br>Nhanh mà thuận tiện.</p>
+<p>Một điều nữa là việc lưu trữ mã nguồn và rất là ưa đó là viết bài và test bài viết nhanh chóng ở local, code mã nguồn cũng có thể cất giữ cẩn thận trên <code>gitlab</code> với chế độ private. Còn phần sinh ra static web thì public lên <a href="https://pages.github.com/" target="_blank" rel="noopener">Github pages</a> rất gọn nhẹ tiện dụng.</p>
+<p>Xong! Cuối cùng thì cũng kết bài =))</p>
+<p>Nếu bạn đã từng muốn làm cho mình một blog nhưng ngại cài đặt thì bây giờ bạn còn chờ gì nữa mà không lao vào thử luôn với <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> và <a href="https://pages.github.com/" target="_blank" rel="noopener">Github Page</a>. Nếu có khó khăn thì hãy comment ở dưới mình sẽ hỗ trợ bạn. Chúc bạn thành công!</p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Blogs</a></li>
+         
+          <li><a href="/Search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tai-sao-dan-code-nen-viet-blog"><span class="toc-number">1.</span> <span class="toc-text">Tại sao dân code nên viết blog?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-ly-do-dan-code-chon-Hexo-va-Github-Pages"><span class="toc-number">2.</span> <span class="toc-text">3 lý do dân code chọn Hexo và Github Pages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Huong-dan-tao-blog-bang-Hexo-va-Github-Pages"><span class="toc-number">3.</span> <span class="toc-text">Hướng dẫn tạo blog bằng Hexo và Github Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cai-dat-moi-truong"><span class="toc-number">3.1.</span> <span class="toc-text">Cài đặt môi trường</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tao-blog-run-local"><span class="toc-number">3.2.</span> <span class="toc-text">Tạo blog run local</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dang-ky-Github-Pages"><span class="toc-number">3.3.</span> <span class="toc-text">Đăng ký Github Pages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sinh-web-tinh-va-deploy-len-github-pages"><span class="toc-number">3.4.</span> <span class="toc-text">Sinh web tĩnh và deploy lên github pages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo-theme"><span class="toc-number">3.5.</span> <span class="toc-text">Hexo theme</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Viet-bai-va-public"><span class="toc-number">3.6.</span> <span class="toc-text">Viết bài và public</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/&text=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/&title=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/&is_video=false&description=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code&body=Check out this article: http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/&title=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/&title=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/&title=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/&title=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/&name=Hướng dẫn tạo blog với Hexo và GithubPage cho dân code&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Chia sẻ</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Lên đầu trang</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 DeveloperKeep
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Blogs</a></li>
+         
+          <li><a href="/Search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-88004252-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
