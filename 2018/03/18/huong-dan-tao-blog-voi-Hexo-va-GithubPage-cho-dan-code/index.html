@@ -15,10 +15,11 @@
 <meta property="og:description" content="Hướng dẫn tạo blog Hexo và deploy lên Github page cho dân code">
 <meta property="og:locale" content="vi">
 <meta property="og:image" content="http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/github_hexo_blog.png">
+<meta property="og:image" content="http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/cname.PNG">
 <meta property="og:image" content="http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/theme-directory.png">
 <meta property="og:image" content="http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/post-directory.png">
 <meta property="og:image" content="http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/hexo-public-folder.png">
-<meta property="og:updated_time" content="2019-09-10T12:33:43.293Z">
+<meta property="og:updated_time" content="2019-09-18T08:06:55.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hướng dẫn tạo blog với Hexo và GithubPage cho dân code">
 <meta name="twitter:description" content="Hướng dẫn tạo blog Hexo và deploy lên Github page cho dân code">
@@ -185,6 +186,9 @@
 <p>Cuối cùng thực hiện deploy bằng lệnh sau:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>Lúc này Hexo sẽ sinh web tĩnh ra và push lên repo của chúng ta đa đăng ký. Xong, bây giờ blog của chúng ta đã có trên github page và có thể truy cập được rồi.<br>Rất đơn giản phải không!</p>
+<p>Đặc biệt các bạn chú ý một điều khi deploy lên github page mà blog có sử dụng tên miền riêng của các bạn, ví dụ như developerkeep.com như đối với mình, thì các bạn phải chú ý rằng cấu hình cho github page nhận tên miền của mình bản chất là github tạo một file CNAME với nội dung chứa tên miền của bạn ở thư mục gốc của repo. Vì thế mỗi lần deploy sẽ bị mất file CNAME này dẫn đến github không nhận tên miền của các bạn và các bạn phải cài đặt lại. Để không phải mỗi lần deploy lại cài đặt lại thì các bạn tạo sẵn file CNAME và nội dung là tên miền của các bạn và đặt nó vào thư mục source, ví dụ như đối với blog của mình sẽ như hình sau:</p>
+<p><img src="cname.PNG" alt=""></p>
+<p>Vậy là xong phần tự deploy blog</p>
 <h3 id="Hexo-theme"><a href="#Hexo-theme" class="headerlink" title="Hexo theme"></a>Hexo theme</h3><p>Bất cứ Blog framework nào cũng sẽ hỗ trợ theme cho bạn lựa chọn. <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> cũng vậy, có một tá theme ở <a href="https://hexo.io/themes/index.html" target="_blank" rel="noopener">đây</a>. Hầu như các theme ở đấy đều miễn phí và mã nguồn mỡ trên github.</p>
 <p>Cài đặt theme ra sao? Thư mục theme ở /thư mục gốc/themes. trong thư mục này mỗi thư mục con là một theme. Vậy nên để cài đặt theme mới thì việc đầu tiên là bạn phải clone code theme đó vào thư mục themes của Hexo. Ví dụ mình sử dụng theme cactus thì thư mục sẽ như sau:</p>
 <p><img src="theme-directory.png" alt="hexo theme folder"></p>
@@ -196,7 +200,8 @@
 <p>Hexo sẽ sinh ra 1 file mang tên hello-world.md ở thư mục /source/_post và thư mục chứa assest của post đó là /source/_post/hello-world/. Khi bạn viết nhiều bài, thư mục bài viết của bạn sẽ kiểu như sau:</p>
 <p><img src="post-directory.png" alt="thư mục bài viết Hexo"></p>
 <p>Để có thể viết bài thì bạn chỉ cần mở file .md đó bằng bất cứ trình soạn thảo <code>markdown</code> nào cũng được hoặc là notepad++ =))<br> Bạn nên xem qua hướng dẫn trên trang chủ của hexo về format viết bài.</p>
-<p>Public bài như thế nào? wow đây là việc cuối cùng cần làm để đưa bài viết lên <a href="https://pages.github.com/" target="_blank" rel="noopener">Github pages</a> và có thể <code>share</code> cho bạn bè đọc rồi. Đơn giản, bạn chỉ cần chạy lại lệnh deploy <code>hexo deploy</code> thì hexo sẽ tự động làm việc đó cho bạn.</p>
+<p>Public bài như thế nào? wow đây là việc cuối cùng cần làm để đưa bài viết lên <a href="https://pages.github.com/" target="_blank" rel="noopener">Github pages</a> và có thể <code>share</code> cho bạn bè đọc rồi. Đơn giản, bạn chỉ cần chạy lại lệnh deploy như sau thì hexo sẽ tự động làm việc đó cho bạn:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo deploy --generate</span><br></pre></td></tr></table></figure></p>
+<p>Chú ý tham số –generate để hexo build lại static web từ những cập nhật mới nhất mà bạn đã sửa trong bài viết cũng như theme nhé</p>
 <p>Bản chất thì hexo sẽ sinh ra file .html tĩnh tương ứng với bài viết .md của bạn. </p>
 <p><img src="hexo-public-folder.png" alt="Thư mục public của Hexo"></p>
 <p>Sau khi sinh ra file html tĩnh thì hexo mang đống này commit lên <a href="https://pages.github.com/" target="_blank" rel="noopener">Github pages</a>. Như vậy là xong quá trình deploy.</p>

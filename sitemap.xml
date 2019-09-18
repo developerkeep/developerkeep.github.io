@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/</loc>
+    
+    <lastmod>2019-09-18T08:06:55.430Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://developerkeep.com/2019/09/17/Danh-thuc-y-thuc-ban-than/</loc>
     
-    <lastmod>2019-09-17T15:00:59.140Z</lastmod>
+    <lastmod>2019-09-18T06:13:48.799Z</lastmod>
     
   </url>
   
@@ -44,13 +51,6 @@
   </url>
   
   <url>
-    <loc>http://developerkeep.com/2018/03/18/huong-dan-tao-blog-voi-Hexo-va-GithubPage-cho-dan-code/</loc>
-    
-    <lastmod>2019-09-10T12:33:43.293Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://developerkeep.com/404.html</loc>
     
     <lastmod>2018-04-17T11:02:46.000Z</lastmod>
@@ -65,14 +65,14 @@
   </url>
   
   <url>
-    <loc>http://developerkeep.com/about/index.html</loc>
+    <loc>http://developerkeep.com/categories/index.html</loc>
     
     <lastmod>2018-04-17T11:02:46.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://developerkeep.com/categories/index.html</loc>
+    <loc>http://developerkeep.com/about/index.html</loc>
     
     <lastmod>2018-04-17T11:02:46.000Z</lastmod>
     
